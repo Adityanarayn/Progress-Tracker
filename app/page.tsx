@@ -56,17 +56,18 @@ export default function MLProgressTracker() {
   const [completed, setCompleted] = useState(Array(roadmap.length).fill(false));
   const [expanded, setExpanded] = useState(Array(roadmap.length).fill(false));
 
-  const toggleTask = (index) => {
+  const toggleTask = (index: number) => {
     const newCompleted = [...completed];
     newCompleted[index] = !newCompleted[index];
     setCompleted(newCompleted);
   };
-
-  const toggleExpand = (index) => {
+  
+  const toggleExpand = (index: number) => {
     const newExpanded = [...expanded];
     newExpanded[index] = !newExpanded[index];
     setExpanded(newExpanded);
   };
+  
 
   const progress = (completed.filter(Boolean).length / roadmap.length) * 100;
 
